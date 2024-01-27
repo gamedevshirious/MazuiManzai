@@ -1,9 +1,97 @@
-[gd_scene load_steps=5 format=3 uid="uid://xkeq0wjw2t02"]
+[gd_scene load_steps=8 format=3 uid="uid://xkeq0wjw2t02"]
 
 [ext_resource type="PackedScene" uid="uid://g0gq5qr7iw3h" path="res://scenes/straight_man/straight_man.tscn" id="1_0v7lm"]
 [ext_resource type="Script" path="res://scenes/stage/stage.gd" id="1_s2fhp"]
 [ext_resource type="Texture2D" uid="uid://sy6t524cyryb" path="res://assets/images/stage.jpg" id="2_efxte"]
 [ext_resource type="PackedScene" uid="uid://br1a6d0qms0io" path="res://scenes/funny_man/funny_man.tscn" id="3_crfld"]
+
+[sub_resource type="Animation" id="Animation_u3btq"]
+resource_name = "play"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimerLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.9, 1, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(20, 20), Vector2(0, 0), Vector2(20, 20), Vector2(0, 0), Vector2(20, 20), Vector2(0, 0), Vector2(20, 20)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TimerLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["3", "2", "1
+", "なんでやねん"]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Timer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [2],
+"method": &"start"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TimerLabel:pivot_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(5, 12), Vector2(48, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_yrsb5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerLabel:pivot_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x88vq"]
+_data = {
+"RESET": SubResource("Animation_yrsb5"),
+"play": SubResource("Animation_u3btq")
+}
 
 [node name="stage" type="Node2D"]
 script = ExtResource("1_s2fhp")
@@ -12,6 +100,48 @@ script = ExtResource("1_s2fhp")
 position = Vector2(640, 360)
 texture = ExtResource("2_efxte")
 
+[node name="bokke_label" type="Label" parent="Stage"]
+offset_left = -580.0
+offset_top = -234.0
+offset_right = -469.0
+offset_bottom = -211.0
+scale = Vector2(3, 3)
+text = "Bokke 
+Ready ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="instruction" type="Label" parent="Stage/bokke_label"]
+layout_mode = 0
+offset_left = 26.6667
+offset_top = 52.0
+offset_right = 122.667
+offset_bottom = 75.0
+scale = Vector2(0.5, 0.5)
+text = "press 'E'"
+horizontal_alignment = 1
+
+[node name="tsukkomi_label" type="Label" parent="Stage"]
+offset_left = 254.0
+offset_top = -237.0
+offset_right = 365.0
+offset_bottom = -214.0
+scale = Vector2(3, 3)
+text = "Tsukkomi 
+Ready ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="instruction" type="Label" parent="Stage/tsukkomi_label"]
+layout_mode = 0
+offset_left = 30.3333
+offset_top = 53.0
+offset_right = 126.333
+offset_bottom = 76.0
+scale = Vector2(0.5, 0.5)
+text = "press 'Enter'"
+horizontal_alignment = 1
+
 [node name="straight_man" parent="." instance=ExtResource("1_0v7lm")]
 position = Vector2(729, 465)
 scale = Vector2(5, 5)
@@ -19,3 +149,30 @@ scale = Vector2(5, 5)
 [node name="funny_man" parent="." instance=ExtResource("3_crfld")]
 position = Vector2(534, 466)
 scale = Vector2(5, 5)
+
+[node name="Director" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x88vq")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 612.0
+offset_top = 317.0
+offset_right = 622.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(20, 20)
+pivot_offset = Vector2(48, 12)
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="funny_man" to="." method="_on_funny_man_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
