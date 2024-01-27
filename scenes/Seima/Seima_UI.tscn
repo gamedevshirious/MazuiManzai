@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://box8xlq6lmy81"]
+[gd_scene load_steps=3 format=3 uid="uid://box8xlq6lmy81"]
 
-[ext_resource type="Script" path="res://scenes/Seima/Textt.gd" id="1_2pr0f"]
 [ext_resource type="Texture2D" uid="uid://clj1l4b3jrsom" path="res://assets/images/iro.jpg" id="2_lqd0g"]
 
 [sub_resource type="GDScript" id="GDScript_w33jm"]
@@ -24,7 +23,6 @@ func _on_button_pressed():
 [node name="SeimaNode2D" type="Node2D"]
 script = SubResource("GDScript_w33jm")
 
-<<<<<<< HEAD
 [node name="Iro2" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.164706)
 position = Vector2(632.5, 244.166)
@@ -77,7 +75,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Mazui Manzai"
 horizontal_alignment = 1
 vertical_alignment = 1
-=======
+
 [node name="Button" type="Button" parent="."]
 offset_left = 349.0
 offset_top = 424.0
@@ -93,9 +91,27 @@ text = "Mazui Manzai"
 script = ExtResource("1_2pr0f")
 
 [node name="Iro" type="Sprite2D" parent="."]
-position = Vector2(1512, 932)
-scale = Vector2(0.578125, 0.334279)
+position = Vector2(639, 361)
+scale = Vector2(2, 0.818)
 texture = ExtResource("2_lqd0g")
->>>>>>> f40a7dc (kari)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 454.0
+offset_top = 444.0
+offset_right = 545.0
+offset_bottom = 486.0
+scale = Vector2(4, 4)
+text = "Start
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 133.0
+offset_top = 103.0
+offset_right = 240.0
+offset_bottom = 126.0
+scale = Vector2(10, 10)
+text = "Mazui Manzai"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
