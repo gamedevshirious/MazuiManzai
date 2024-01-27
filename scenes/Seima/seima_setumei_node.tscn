@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqh2dy5bkctnk"]
+
+[ext_resource type="Texture2D" uid="uid://clj1l4b3jrsom" path="res://assets/images/iro.jpg" id="1_17mq0"]
+
+[node name="setumeiNode2D" type="Node2D"]
+
+[node name="Iro3" type="Sprite2D" parent="."]
+modulate = Color(0.823529, 1, 1, 1)
+position = Vector2(640.51, 364.463)
+scale = Vector2(2.00465, 0.825283)
+texture = ExtResource("1_17mq0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 90.0
+offset_right = 288.0
+offset_bottom = 113.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0.466667, 0.309804, 0.14902, 1)
+text = "Player1"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 90.0
+offset_right = 858.0
+offset_bottom = 113.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0.439216, 0.14902, 0.0823529, 1)
+text = "Player2"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 200.0
+offset_right = 258.0
+offset_bottom = 275.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0.321569, 0, 0, 1)
+text = "Wキー　ジャンプ
+　　 or
+Sキー　しゃがむ"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 680.0
+offset_top = 200.0
+offset_right = 811.0
+offset_bottom = 275.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0.407843, 0.309804, 0.054902, 1)
+text = "↑upキー　上を叩く
+ 　　　  or
+↓Dnキー　下を叩く"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 244.0
+offset_top = 550.0
+offset_right = 415.0
+offset_bottom = 577.0
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0, 0, 0, 0.992157)
+text = "当たるかかわすかで勝負！"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 578.0
+offset_top = 102.0
+offset_right = 601.0
+offset_bottom = 125.0
+rotation = 0.0054147
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "VS"
