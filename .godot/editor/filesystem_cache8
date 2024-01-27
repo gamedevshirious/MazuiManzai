@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706316560
+icon.svg::CompressedTexture2D::4759318538102093552::1706274584::1706274590::1::::<><>::
+::res://assets/::1706274777
+::res://data/::1706276545
+jokes.json::JSON::-1::1706276545::0::1::::<><>::
+::res://scenes/::1706276512
+::res://scenes/funny_man/::1706315478
+funny_man.gd::GDScript::-1::1706276512::0::1::::<>Node2D<>::
+funny_man.tscn::PackedScene::3633360403690157842::1706315478::0::1::::<><>::
+::res://scenes/stage/::1706315478
+stage.gd::GDScript::-1::1706277763::0::1::::<>Node2D<>::
+stage.tscn::PackedScene::1635259969397739793::1706315478::0::1::::<><>::uid://g0gq5qr7iw3h::::res://scenes/straight_man/straight_man.tscn<>res://scenes/stage/stage.gd<>uid://br1a6d0qms0io::::res://scenes/funny_man/funny_man.tscn
+::res://scenes/straight_man/::1706315478
+straight_man.gd::GDScript::-1::1706276733::0::1::::<>Node2D<>::
+straight_man.tscn::PackedScene::473136981571646583::1706315478::0::1::::<><>::
