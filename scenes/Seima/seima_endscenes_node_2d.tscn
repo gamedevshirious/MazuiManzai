@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs8i0455uy004"]
+
+[ext_resource type="Texture2D" uid="uid://clj1l4b3jrsom" path="res://assets/images/iro.jpg" id="1_xdnrl"]
+
+[node name="seima_endscenesNode2D" type="Node2D"]
+
+[node name="Iro3" type="Sprite2D" parent="."]
+modulate = Color(0.823529, 1, 1, 1)
+position = Vector2(640.51, 364.463)
+scale = Vector2(2.00465, 0.825283)
+texture = ExtResource("1_xdnrl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 292.0
+offset_top = 96.0
+offset_right = 369.0
+offset_bottom = 119.0
+scale = Vector2(10, 10)
+text = "game set"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 240.0
+offset_top = 444.0
+offset_right = 297.0
+offset_bottom = 467.0
+scale = Vector2(4, 4)
+text = "Winner"
