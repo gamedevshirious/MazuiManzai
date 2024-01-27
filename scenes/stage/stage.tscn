@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://xkeq0wjw2t02"]
+[gd_scene load_steps=5 format=3 uid="uid://xkeq0wjw2t02"]
 
 [ext_resource type="PackedScene" uid="uid://g0gq5qr7iw3h" path="res://scenes/straight_man/straight_man.tscn" id="1_0v7lm"]
 [ext_resource type="Script" path="res://scenes/stage/stage.gd" id="1_s2fhp"]
+[ext_resource type="Texture2D" uid="uid://sy6t524cyryb" path="res://assets/images/stage.jpg" id="2_efxte"]
 [ext_resource type="PackedScene" uid="uid://br1a6d0qms0io" path="res://scenes/funny_man/funny_man.tscn" id="3_crfld"]
 
 [node name="stage" type="Node2D"]
 script = ExtResource("1_s2fhp")
 
+[node name="Stage" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_efxte")
+
 [node name="straight_man" parent="." instance=ExtResource("1_0v7lm")]
-position = Vector2(709, 508)
+position = Vector2(729, 465)
 scale = Vector2(5, 5)
 
 [node name="funny_man" parent="." instance=ExtResource("3_crfld")]
-position = Vector2(514, 509)
+position = Vector2(534, 466)
 scale = Vector2(5, 5)
