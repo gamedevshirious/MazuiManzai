@@ -5,6 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://sy6t524cyryb" path="res://assets/images/stage.jpg" id="2_efxte"]
 [ext_resource type="PackedScene" uid="uid://br1a6d0qms0io" path="res://scenes/funny_man/funny_man.tscn" id="3_crfld"]
 
+[sub_resource type="Animation" id="Animation_yrsb5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerLabel:pivot_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48, 12)]
+}
+
 [sub_resource type="Animation" id="Animation_u3btq"]
 resource_name = "play"
 length = 2.0
@@ -70,21 +85,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2(5, 12), Vector2(48, 12)]
-}
-
-[sub_resource type="Animation" id="Animation_yrsb5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TimerLabel:pivot_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(48, 12)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x88vq"]
