@@ -37,6 +37,16 @@ position = Vector2(640.51, 364.463)
 scale = Vector2(2.00465, 0.825283)
 texture = ExtResource("2_lqd0g")
 
+[node name="Label4" type="Label" parent="."]
+offset_left = 484.0
+offset_top = 106.0
+offset_right = 548.0
+offset_bottom = 129.0
+rotation = 0.411898
+scale = Vector2(8, 8)
+theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
+text = "DenGar"
+
 [node name="Label3" type="Label" parent="."]
 offset_left = 487.0
 offset_top = 447.0
@@ -45,7 +55,7 @@ offset_bottom = 470.0
 rotation = 0.00140616
 scale = Vector2(8, 8)
 theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
-text = "危検"
+text = "危検が危ない"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 477.0
@@ -58,10 +68,10 @@ text = "Start
 "
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 441.0
-offset_top = 65.0
-offset_right = 505.0
-offset_bottom = 88.0
+offset_left = 469.0
+offset_top = 103.0
+offset_right = 533.0
+offset_bottom = 126.0
 rotation = 0.411898
 scale = Vector2(8, 8)
 theme_override_colors/font_color = Color(0.47451, 0, 0, 1)
@@ -79,7 +89,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Dokuro" type="Sprite2D" parent="."]
-position = Vector2(199, 622)
+position = Vector2(223, 630)
 texture = ExtResource("2_76p5s")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
