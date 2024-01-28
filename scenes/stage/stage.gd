@@ -8,12 +8,27 @@ var bokke_action = "idle"
 
 var json_as_dict
 var key
+var nandeyanen = []
+
+func dir_contents(path):
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				continue
+			if file_name.ends_with("_nan.mp3"):
+				nandeyanen.append(path + file_name)
+			file_name = dir.get_next()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var file = "res://data/jokes.json"
 	var json_as_text = FileAccess.get_file_as_string(file)
 	json_as_dict = JSON.parse_string(json_as_text)
+
+	dir_contents("res://assets/voices/")
 	
 	setup()
 	
@@ -29,7 +44,7 @@ func setup():
 	$Stage/bokke_label.visible = true
 	$Stage/tsukkomi_label.visible = false
 	$Stage/tsukkomi_label.text = "tsukkomi \nReady ?"
-	$Stage/bokke_label.text = "bokke \nReady ?"
+	$Stage/bokke_label.text = "boke \nReady ?"
 	
 	$Stage/tsukkomi_label/instruction.visible = true
 	$Stage/bokke_label/instruction.visible = true
@@ -37,12 +52,10 @@ func setup():
 	$TimerLabel.visible = false
 	
 	var size = json_as_dict.size()
-	key = json_as_dict.keys()[randi() % size]	
-	
-	print(key)
+	key = json_as_dict.keys().pick_random()
 
 func _process(_delta):	
-	if Input.is_action_just_pressed("tsukkomi_interact"):
+	if Input.is_action_just_pressed("tsukkomi_interact") and bokke_ready and not tsukkomi_ready:
 		tsukkomi_ready = true
 		$Stage/tsukkomi_label.text = "Ready!"
 		$Stage/tsukkomi_label/instruction.visible = false
@@ -50,8 +63,7 @@ func _process(_delta):
 			$Director.play("play")
 			game_start = true
 	
-	
-	if Input.is_action_just_pressed("bokke_interact"):
+	if Input.is_action_just_pressed("bokke_interact") and not bokke_ready:
 		bokke_ready = true
 		$Stage/tsukkomi_label.visible = true
 		$Stage/bokke_label.text = "Ready!"
@@ -104,8 +116,12 @@ func _on_funny_man_animation_finished():
 func get_tsukkomi_dialog():
 	if tsukkomi_action != "idle":
 		$"dailog-box/label".text = json_as_dict[key]["S"]
+		$sfx.stream = load(nandeyanen.pick_random())
 	else:
 		$"dailog-box/label".text = "Player1: Wキー　ジャンプ or Sキー　しゃがむ\nPlayer2: ↑upキー　上を叩く or ↓Dnキー　下を叩く\n当たるかかわすかで勝負！"
+		$sfx.stream = load("res://assets/soundeffects/boo.mp3")
+	$sfx.play()
+
 
 func get_bokke_dialog():
 	$"dailog-box/label".text = json_as_dict[key]["F"]

@@ -1,293 +1,149 @@
-[gd_scene load_steps=6 format=3 uid="uid://g0gq5qr7iw3h"]
+[gd_scene load_steps=9 format=3 uid="uid://g0gq5qr7iw3h"]
+
+[ext_resource type="Texture2D" uid="uid://tx5bqmpjeds7" path="res://assets/images/character_parts/crane_head.PNG" id="1_0g6t7"]
+[ext_resource type="Texture2D" uid="uid://eek4wpbhcf83" path="res://assets/images/character_parts/crane_arm.PNG" id="2_5qr4g"]
+[ext_resource type="Texture2D" uid="uid://bf7g75b7ka3aa" path="res://assets/images/character_parts/crane_newspaper.PNG" id="3_t3nqi"]
 
 [sub_resource type="Animation" id="Animation_8awap"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_lkbmw"]
+resource_name = "shrug"
+
+[sub_resource type="Animation" id="Animation_n3ryd"]
+resource_name = "hit_jump"
+length = 0.6
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("stick:position")
+tracks/0/path = NodePath("nandeyanen:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("stick:rotation")
+tracks/1/path = NodePath("CraneArm:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [-1.36136, 1.57071, 0.995005, -1.36136]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("stick:scale")
+tracks/2/path = NodePath("CraneArm/CraneNewspaper:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 0.4)]
+"values": [-0.7536, -0.7536, -1.12842, -2.63047, -0.7536]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("nandeyanen:visible")
+tracks/3/path = NodePath("CraneArm/CraneNewspaper:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("torso:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("head:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, -31)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("head:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_n3ryd"]
+[sub_resource type="Animation" id="Animation_mrow2"]
 resource_name = "hit_duck"
 length = 0.6
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("stick:position")
+tracks/0/path = NodePath("nandeyanen:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.15, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-19, 1), Vector2(-27, 1), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("stick:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.15, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -1.64793, -1.7564, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("stick:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("stick:scale")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.2, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 0.4), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 0.4)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("nandeyanen:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-
-[sub_resource type="Animation" id="Animation_mrow2"]
-resource_name = "hit"
-length = 0.6
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("stick:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.15, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-12, -2), Vector2(-25, -16), Vector2(0, 0)]
-}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("stick:rotation")
+tracks/1/path = NodePath("CraneArm:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.15, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.25, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.761521, -0.761521, 0.0]
+"values": [-0.90662, -0.341081, -0.179711, -0.179711, -0.90662]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("stick:visible")
+tracks/2/path = NodePath("CraneArm/CraneNewspaper:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.1501, 0.25, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.754684, -0.135931, -2.42605, -1.71922, -1.71922, 0.754684]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("stick:scale")
-tracks/3/interp = 2
+tracks/3/path = NodePath("CraneArm/CraneNewspaper:scale")
+tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.2, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 0.4), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 0.4)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("nandeyanen:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_lkbmw"]
-resource_name = "shrug"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("head:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.8),
+"times": PackedFloat32Array(0.1, 0.15, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -31), Vector2(1, -35), Vector2(1, -31)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("torso:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("head:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.261799, 0.0]
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7owld"]
 _data = {
 "RESET": SubResource("Animation_8awap"),
-"hit_duck": SubResource("Animation_n3ryd"),
-"hit_jump": SubResource("Animation_mrow2"),
+"hit_duck": SubResource("Animation_mrow2"),
+"hit_jump": SubResource("Animation_n3ryd"),
 "shrug": SubResource("Animation_lkbmw")
 }
 
 [node name="straight_man" type="Node2D"]
 
-[node name="stick" type="Polygon2D" parent="."]
-scale = Vector2(1, 0.4)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-8, -47, -0.644547, -47, 7, -47, 4, 6, -4, 6)
-
-[node name="torso" type="Polygon2D" parent="."]
-color = Color(0.85098, 0.631373, 0.384314, 1)
-polygon = PackedVector2Array(-11, -21, 14, -21, 14, 28, -11, 28)
+[node name="CraneHead" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("1_0g6t7")
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="torso"]
-offset_left = -3.0
-offset_top = -15.0
-offset_right = 7.0
-offset_bottom = 8.0
-text = "T"
+[node name="CraneArm" type="Sprite2D" parent="."]
+position = Vector2(80, -115)
+rotation = -0.90662
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_5qr4g")
+offset = Vector2(-175, 150)
 
-[node name="head" type="Polygon2D" parent="."]
-position = Vector2(1, -31)
-color = Color(0.85098, 0.631373, 0.384314, 1)
-polygon = PackedVector2Array(-4, -13, 4, -13, 12, -7, 12, 3, 4, 10, -4, 10, -11, 3, -11, -8)
-metadata/_edit_lock_ = true
+[node name="CraneNewspaper" type="Sprite2D" parent="CraneArm"]
+position = Vector2(-484.025, 299.96)
+rotation = 0.754684
+texture = ExtResource("3_t3nqi")
+offset = Vector2(75, -175)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -295,6 +151,7 @@ libraries = {
 }
 
 [node name="nandeyanen" type="Label" parent="."]
+visible = false
 offset_left = 1.0
 offset_top = -62.0
 offset_right = 97.0
