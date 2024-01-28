@@ -1,57 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://br1a6d0qms0io"]
+[gd_scene load_steps=13 format=3 uid="uid://br1a6d0qms0io"]
 
 [ext_resource type="Script" path="res://scenes/funny_man/funny_man.gd" id="1_3vie5"]
+[ext_resource type="Texture2D" uid="uid://bsk1rgjfjugsk" path="res://assets/images/character_parts/ostrich_head.PNG" id="2_10n17"]
+[ext_resource type="AudioStream" uid="uid://ddca3a827ih04" path="res://assets/soundeffects/slap.mp3" id="2_uhoc3"]
+[ext_resource type="Texture2D" uid="uid://rgeeg3f6pomr" path="res://assets/images/character_parts/ostrich_torso.PNG" id="3_6s56m"]
+[ext_resource type="Texture2D" uid="uid://d0ui1tffchexr" path="res://assets/images/character_parts/ostrich_leg.PNG" id="4_qm8rd"]
 
 [sub_resource type="Animation" id="Animation_8awap"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("head:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("torso:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("head:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -30)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("torso:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_pb0xv"]
 resource_name = "hit_duck"
@@ -60,51 +16,66 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("head:scale")
+tracks/0/path = NodePath("OstrichTorso:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.15, 0.25, 0.4, 0.95),
+"times": PackedFloat32Array(0, 0.25, 0.65, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.5, 1.5), Vector2(1, 1)]
+"values": [0.0, 0.266515, 0.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("torso:scale")
+tracks/1/path = NodePath("OstrichTorso/OstrichHead:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.15, 0.4, 0.95),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.05, 0.15, 0.25, 0.65, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+"values": [0.0, 0.92109, 0.888771, 0.0, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("torso:position")
+tracks/2/path = NodePath("OstrichTorso/LOstrichLeg:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.15, 0.4, 0.95, 1.5, 1.95, 2.85),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.05, 0.25, 0.65, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 100), Vector2(-1000, 100), Vector2(-1000, 0), Vector2(-500, 0), Vector2(0, 0)]
+"values": [0.0, -1.19381, 0.0, 0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("head:position")
+tracks/3/path = NodePath("OstrichTorso/ROstrichLeg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.15, 0.4, 0.95, 1.5, 1.9, 2.85),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.05, 0.25, 0.65, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -31), Vector2(0, 100), Vector2(-1000, 100), Vector2(-1000, -30), Vector2(-500, -30), Vector2(0, -30)]
+"values": [0.0, -0.581195, 0.0, 0.0]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sfx")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_uhoc3")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mrow2"]
 resource_name = "hit_jump"
@@ -113,138 +84,66 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("head:scale")
+tracks/0/path = NodePath("OstrichTorso:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.15, 0.25, 0.4, 0.95),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.05, 0.25, 0.65, 0.95, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.5, 1.5), Vector2(1, 1)]
+"values": [Vector2(0, 0), Vector2(0, -50), Vector2(-2613, -790.991), Vector2(-2613, 0), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("torso:scale")
+tracks/1/path = NodePath("OstrichTorso:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.15, 0.4, 0.95),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.05, 0.25, 0.65, 0.95, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("torso:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.15, 0.4, 0.95, 1.5, 1.95, 2.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -250), Vector2(-1000, -250), Vector2(-1000, -250), Vector2(-500, 0), Vector2(0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("head:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.15, 0.4, 0.95, 1.5, 1.9, 2.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -31), Vector2(0, -250), Vector2(-1000, -250), Vector2(-1000, -250), Vector2(-500, -30), Vector2(0, -30)]
+"values": [0.0, 0.0, -0.759511, -0.759218, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_es2kx"]
 resource_name = "miss_duck"
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("head:position")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -30), Vector2(0, 0), Vector2(0, -30)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"mock"
 }]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("torso:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.45), Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("torso:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 20), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kdvl7"]
-resource_name = "miss_jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("torso:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("head:position")
+tracks/1/path = NodePath("OstrichTorso/OstrichHead:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 1),
+"times": PackedFloat32Array(0, 0.2, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -30), Vector2(0, -80), Vector2(0, -30)]
+"values": [0.0, 2.49911, 0.0]
 }
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+
+[sub_resource type="Animation" id="Animation_kdvl7"]
+resource_name = "miss_jump"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -252,28 +151,52 @@ tracks/2/keys = {
 "method": &"mock"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_6hyit"]
-resource_name = "mock"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("head:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.6001, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -31), Vector2(0, -35), Vector2(0, -31), Vector2(0, -35), Vector2(0, -31), Vector2(0, -35), Vector2(0, -31), Vector2(0, -31), Vector2(0, -35), Vector2(0, -31), Vector2(0, -35), Vector2(0, -31)]
-}
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("OstrichTorso:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -500), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OstrichTorso/LOstrichLeg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.872665, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OstrichTorso/ROstrichLeg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6hyit"]
+resource_name = "mock"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -295,25 +218,29 @@ _data = {
 [node name="funny_man" type="Node2D"]
 script = ExtResource("1_3vie5")
 
-[node name="torso" type="Polygon2D" parent="."]
-color = Color(0.85098, 0.631373, 0.384314, 1)
-polygon = PackedVector2Array(-11, -21, 14, -21, 14, 28, -11, 28)
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="torso"]
-offset_left = -3.0
-offset_top = -15.0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "B"
-
-[node name="head" type="Polygon2D" parent="."]
-position = Vector2(0, -30)
-color = Color(0.85098, 0.631373, 0.384314, 1)
-polygon = PackedVector2Array(-4, -13, 4, -13, 12, -7, 12, 3, 4, 10, -4, 10, -11, 3, -11, -8)
-metadata/_edit_lock_ = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7owld")
 }
+
+[node name="OstrichTorso" type="Sprite2D" parent="."]
+position = Vector2(16, -45)
+texture = ExtResource("3_6s56m")
+
+[node name="OstrichHead" type="Sprite2D" parent="OstrichTorso"]
+position = Vector2(-20.0007, -177)
+texture = ExtResource("2_10n17")
+offset = Vector2(50, -175)
+
+[node name="LOstrichLeg" type="Sprite2D" parent="OstrichTorso"]
+position = Vector2(23.0024, 147.002)
+texture = ExtResource("4_qm8rd")
+offset = Vector2(0, 250)
+
+[node name="ROstrichLeg" type="Sprite2D" parent="OstrichTorso"]
+position = Vector2(-48.9976, 151.002)
+texture = ExtResource("4_qm8rd")
+offset = Vector2(0, 250)
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
